@@ -40,3 +40,21 @@ delete('/bands/:id') do
   @bands = Band.all()
   redirect("/categories")
 end
+
+get("/venues") do
+  @venues = Venue.all()
+  erb(:venues)
+end
+
+post("/venues") do
+  name = params.fetch("name")
+  venue = Venue.new({:name => name})
+  venue.save()
+  @venues = Venue.all()
+  redirect("/venues")
+end
+
+get('/venues/:id') do
+  @new_venue = Venue.find(params.fetch('id').to_i)
+  erb(:view_venue)
+end
