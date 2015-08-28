@@ -22,7 +22,7 @@ _This application allows a user to add, update, and delete bands onto the websit
 
 ## Technologies Used
 
-_HTML_, _CSS_, _RSpe}_, _Capybara_, _Sinatra}_, _ActiveRecord_, _Pry_, _Launchy_
+_HTML_, _CSS_, _RSpec_, _Capybara_, _Sinatra_, _ActiveRecord_, _Pry_, _Launchy_
 
 ### Legal
 
