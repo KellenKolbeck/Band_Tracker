@@ -38,7 +38,7 @@ delete('/bands/:id') do
   @new_band = Band.find(params.fetch('id').to_i)
   @new_band.delete()
   @bands = Band.all()
-  redirect("/categories")
+  redirect("/bands")
 end
 
 get("/venues") do
