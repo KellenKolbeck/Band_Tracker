@@ -1,12 +1,12 @@
-# _{Band_Tracker}_
+# _Band_Tracker_
 
-##### _{An application to follow bands and the venues that they play}, {08/28/15}_
+##### _An application to follow bands and the venues that they play, 08/28/15_
 
-#### By _**{Kellen Kolbeck}**_
+#### By _**Kellen Kolbeck**_
 
 ## Description
 
-_{This application allows a user to add, update, and delete bands onto the website. Users can also add music venues to a seperate page that can then be added to an artist's page.}_
+_This application allows a user to add, update, and delete bands onto the website. Users can also add music venues to a seperate page that can then be added to an artist's page._
 
 ## Setup
 
@@ -22,13 +22,12 @@ _{This application allows a user to add, update, and delete bands onto the websi
 
 ## Technologies Used
 
-_{HTML}_, _{CSS}_, _{RSpec}_, _{Capybara}_, _{Sinatra}_, _{ActiveRecord}_, _{Pry}_, _{Launchy}_
+_HTML_, _CSS_, _RSpe}_, _Capybara_, _Sinatra}_, _ActiveRecord_, _Pry_, _Launchy_
 
 ### Legal
 
-*{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
 
-Copyright (c) 2015 **_{Kellen Kolbeck}_**
+Copyright (c) 2015 **_Kellen Kolbeck_**
 
 This software is licensed under the MIT license.
 
