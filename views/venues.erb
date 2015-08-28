@@ -1,27 +1,38 @@
-<% if @venues.any?() %>
+<div class="main-text">
+  <% if @venues.any?() %>
 
-  <h3>Here are the current venues:</h3>
+    <h3>Here are the current venues:</h3>
 
-  <ul>
-    <% @venues.each do |venue| %>
-      <li><a href="venues/<%= venue.id() %>"><%= venue.name() %></a></li>
-    <% end %>
-  </ul>
+    <ul>
+      <% @venues.each do |venue| %>
+        <li><a href="venues/<%= venue.id() %>"><%= venue.name() %></a></li>
+      <% end %>
+    </ul>
 
-<% else %>
+  <% else %>
 
-  <h3>There are no venues yet!</h3>
+    <h3>There are no venues yet!</h3>
 
-<% end %>
+  <% end %>
 
+  <br></br>
 
-<h3>Add a new Venue</h3>
+  <form action="/venues" method="post">
+    <div class="form-group">
+      <label for="name">Add a new Venue:</label>
+      <input type="text" name="name" id="name" class="text-center">
+      <br></br>
+      <button type="submit" class="btn btn-danger">Submit</button>
+    </div>
+  </form>
+</div>
 
-<form action="/venues" method="post">
-  <div class="form-group">
-    <label for="name">Name of Venue:</label>
-    <input type="text" name="name" id="name" class="text-center">
-    <br></br>
-    <button type="submit" class="btn btn-danger">Submit</button>
-  </div>
-</form>
+<br></br>
+
+<div class="link">
+  <a href="/">Back to main page</a>
+</div>
+
+<div class="link">
+  <a href="/bands">To band list</a>
+</div>

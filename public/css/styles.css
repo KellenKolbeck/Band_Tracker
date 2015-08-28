@@ -12,7 +12,24 @@
   color: white;
 }
 
+
 a:hover {
   color: blue !important;
-  font-size: 110%
+  font-size: 110%;
+}
+
+li {
+  font-size: 30px;
+  font-weight: bold;
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.form-group {
+  display: inline !important
+  font-size: 25px;
+}
+
+.main-text {
+  text-align: center;
 }
