@@ -4,6 +4,10 @@
   width: 100% !important;
   }
 
+.list {
+  text-align: center;
+}
+
 .link {
   text-align: center;
   font-size: 50px;

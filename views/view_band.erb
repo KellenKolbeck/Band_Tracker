@@ -7,39 +7,9 @@
       <button type="submit" class="btn btn-danger">Delete <%= @new_band.name() %></button>
     </div>
   </form>
-</div>
 
-<% if @venues.any?() %>
+    <br></br>
 
-  <h3>Here are the current venues:</h3>
-
-  <ul>
-    <% @venues.each do |venue| %>
-      <li><%= venue.name() %></li>
-    <% end %>
-  </ul>
-
-<% else %>
-
-  <h3>There are no venues yet!</h3>
-
-<% end %>
-
-<div class="drop-down">
-  <form action="/bands/<%= @new_band.id() %>" method="post">
-    <label for="name">Select a Venue to add:</label>
-    <select id='name' name='name' type='text'>
-      <% @venues.each() do |venue| %>
-        <option value="<%= venue.id()%>"> <%= venue.name() %> </option>
-      <% end %>
-    </select>
-    <button type="submit" class="btn btn-danger">Add venue</button>
-  </form>
-</div>
-
-<br></br>
-
-<div class="jumbotron">
   <form action="/bands/<%= @new_band.id() %>" method="post">
     <div class="form-group">
       <input type="hidden" name="_method" value="patch">
@@ -49,8 +19,41 @@
       <button type="submit" class="btn btn-danger">Edit</button>
     </div>
   </form>
-
 </div>
+
+<div class="main-text"
+  <form action="/bands/<%= @new_band.id() %>/venues" method="post">
+    <select id='venue_id' name='band_id' type='text'>
+      <% @venues.each() do |venue| %>
+        <option value="<%= venue.id()%>"> <%= venue.name() %> </option>
+      <% end %>
+      <input type="hidden" name="band_id" id="band_id" value="<%= @new_band.id() %>">
+    </select>
+      <br></br>
+      <button type="submit" class="btn btn-danger">Add venue</button>
+  </form>
+</div>
+
+<div class= "list">
+  <% if @venues.any?() %>
+
+    <h4>Venues played by this band:</h4>
+
+      <ul>
+        <% @venues.each() do |venue| %>
+          <li><%= venue.name %></li>
+        <% end %>
+      </ul>
+
+    <% else %>
+
+      <h4>There aren't any venues yet.</h4>
+
+  <% end %>
+</div>
+<br></br>
+
+
 
 <div class="link">
   <a href="/">Back to main page</a>
