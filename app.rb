@@ -1,9 +1,7 @@
 require("bundler/setup")
 Bundler.require(:default)
-require("./lib/category")
-require("./lib/ingredient")
-require("./lib/recipe")
-require("./lib/instruction")
+require("./lib/band")
+require("./lib/venue")
 require('pry')
 
 get("/") do
