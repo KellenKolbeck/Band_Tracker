@@ -21,9 +21,9 @@
   </form>
 </div>
 
-<div class="main-text"
+<div class="main-text">
   <form action="/bands/<%= @new_band.id() %>/venues" method="post">
-    <select id='venue_id' name='band_id' type='text'>
+    <select id='venue_id' name='name' type='text'>
       <% @venues.each() do |venue| %>
         <option value="<%= venue.id()%>"> <%= venue.name() %> </option>
       <% end %>
@@ -35,13 +35,13 @@
 </div>
 
 <div class= "list">
-  <% if @venues.any?() %>
+  <% if @new_band.venues.any?() %>
 
     <h4>Venues played by this band:</h4>
 
       <ul>
         <% @venues.each() do |venue| %>
-          <li><%= venue.name %></li>
+          <li><a href="/venues/<%= @venue.id() %>"></a><%= venue.name %></li>
         <% end %>
       </ul>
 

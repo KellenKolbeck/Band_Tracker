@@ -28,10 +28,10 @@ get('/bands/:id') do
 end
 
 post("/bands/:id/venues") do
-  name = params.fetch('name')
+  name = Venue.find(params.fetch("name"))
+  venue = Venue.create(:name => name)
   @new_band = Band.find(params.fetch('id').to_i)
   @new_venue = Venue.find(params.fetch('id').to_i)
-  venue = Venue.create(:name => name)
   @venues = Venue.all()
   redirect("/bands/#{@new_band.id()}")
 end
@@ -66,5 +66,30 @@ end
 
 get('/venues/:id') do
   @new_venue = Venue.find(params.fetch('id').to_i)
+  @bands = Band.all()
   erb(:view_venue)
+end
+
+post("/venues/:id/bands") do
+  name = Band.find(params.fetch("name"))
+  band = Band.create(:name => name)
+  @new_band = Band.find(params.fetch('id').to_i)
+  @new_venue = Venue.find(params.fetch('id').to_i)
+  @bands = Band.all()
+  redirect("/venues/#{@new_venue.id()}")
+end
+
+patch('/venues/:id') do
+  @new_venue = Venue.find(params.fetch('id').to_i)
+  name = params.fetch('name')
+  @new_venue.update({:name => name})
+  @new_venue = Venue.find(params.fetch('id').to_i)
+  redirect("/venues/#{@new_venue.id()}")
+end
+
+delete('/venues/:id') do
+  @new_venue = Venue.find(params.fetch('id').to_i)
+  @new_venue.delete()
+  @venues = Venue.all()
+  redirect("/venues")
 end
