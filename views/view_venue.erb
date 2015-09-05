@@ -27,7 +27,7 @@
       <% @bands.each() do |band| %>
         <option value="<%= band.id()%>"> <%= band.name() %> </option>
       <% end %>
-      <input type="hidden" name="venue_id" id="venue_id" value="<%= @new_venue.id() %>">
+      <input type="hidden" name="band_id" id="band_id" value="<%= @new_band %>">
     </select>
       <br></br>
       <button type="submit" class="btn btn-danger">Add band</button>

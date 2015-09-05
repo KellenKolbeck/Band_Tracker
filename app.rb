@@ -33,7 +33,7 @@ post("/bands/:id/venues") do
   @new_band = Band.find(params.fetch('id').to_i)
   @new_venue = Venue.find(params.fetch('id').to_i)
   @venues = Venue.all()
-  redirect("/bands/#{@new_band.id()}")
+  erb(:view_band)
 end
 
 patch('/bands/:id') do
